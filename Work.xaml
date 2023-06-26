@@ -7,8 +7,22 @@
         mc:Ignorable="d"
         Title="Work" Height="300" Width="400" Closing="OnClosing">
     <Grid Height="NaN" Width="NaN">
-        <Label Content="Your result:" HorizontalAlignment="Left" Margin="81,0,0,0" VerticalAlignment="Center"/>
-        <Label x:Name="result_lbl" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="162,0,0,0"/>
-        <Button x:Name="result_tb" Content="Get result" HorizontalAlignment="Left" Margin="225,214,0,0" VerticalAlignment="Top" Click="result_btn_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="50" CenterX="0.5" CenterY="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="#FFB700FF" Offset="0"/>
+                <GradientStop Color="#FFFFF500" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Your result:" HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Center" Height="54" Width="134" FontSize="24"/>
+        <Label x:Name="result_lbl" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="165,0,0,0" Height="54" Width="225" FontSize="24"/>
+        <Button x:Name="result_tb" Content="Get result" HorizontalAlignment="Left" Margin="252,212,0,0" VerticalAlignment="Top" Click="result_btn_Click" Height="35" Width="116" FontSize="20" Background="{x:Null}" Foreground="White" BorderBrush="White"/>
     </Grid>
 </Window>

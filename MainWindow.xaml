@@ -5,7 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_PR8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainMenu" Height="450" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <LinearGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                    <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LinearGradientBrush.RelativeTransform>
+            <GradientStop Color="#FFD0D0D0" Offset="0.299"/>
+            <GradientStop Color="#FFFD6161" Offset="0.837"/>
+            <GradientStop Color="#FF131E5B" Offset="0.382"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -15,9 +30,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="begin_btn" Content="Begin" HorizontalAlignment="Left" Margin="328,129,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="144" Height="31" Click="begin_btn_Click"/>
-        <Button x:Name="work_btn" Content="Work" HorizontalAlignment="Left" Margin="328,208,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="31" Width="144" RenderTransformOrigin="0.495,0.453" Click="work_btn_Clicked"/>
-        <Button x:Name="about_btn" Content="About" HorizontalAlignment="Left" Margin="328,0,0,108" Grid.Row="1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Height="31" Width="144"/>
+        <Button x:Name="begin_btn" Content="Begin" HorizontalAlignment="Left" Margin="30,77,0,0" VerticalAlignment="Top" Width="304" Height="62" Click="begin_btn_Click" Background="{x:Null}" BorderBrush="Black" Grid.Column="1"/>
+        <Button x:Name="work_btn" Content="Work" HorizontalAlignment="Left" Margin="30,205,0,0" VerticalAlignment="Top" Height="64" Width="304" RenderTransformOrigin="0.495,0.453" Click="work_btn_Clicked" Background="{x:Null}" BorderBrush="White" Grid.Column="1" Grid.RowSpan="2" Foreground="White"/>
+        <Button x:Name="about_btn" Content="About" HorizontalAlignment="Left" Margin="30,113,0,0" VerticalAlignment="Top" Height="64" Width="304" Background="{x:Null}" BorderBrush="White" Grid.Column="1" Grid.Row="1" Foreground="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="39" Stroke="White" VerticalAlignment="Top" Width="800" Fill="White" Grid.ColumnSpan="2"/>
+        <Button x:Name="close_btn" Grid.Column="1" Content="X" HorizontalAlignment="Left" Margin="348,6,0,0" VerticalAlignment="Top" Width="27" Height="28" Background="{x:Null}" BorderBrush="Black" FontSize="18" Click="close_btn_Close"/>
+        <Image Margin="0,39,0,0" Grid.RowSpan="2" Source="/Image2.png" Stretch="Fill"/>
+
     </Grid>
 
 </Window>

@@ -41,5 +41,15 @@ namespace WpfApp_PR8
         {
             work.Show();
         }
+
+        private void close_btn_Close(object sender, RoutedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void what_btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

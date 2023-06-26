@@ -5,15 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_PR8"
         mc:Ignorable="d"
-        Title="Begin" Height="450" Width="800" Closing="OnClosing">
+        Title="Begin" Height="450" Width="800" Closing="OnClosing" WindowStyle="None">
     <Grid>
-        <TextBox x:Name="word_tb" HorizontalAlignment="Left" Margin="275,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272" Height="17"/>
-        <CheckBox x:Name="uc_cb" Content="Upper case" HorizontalAlignment="Left" Margin="275,188,0,0" VerticalAlignment="Top" Click="uc_cb_Checked"/>
-        <CheckBox x:Name="lc_cb" Content="Lower case" HorizontalAlignment="Left" Margin="275,230,0,0" VerticalAlignment="Top" Click="lc_cb_Checked"/>
-        <CheckBox x:Name="border_cb" Content="Border" HorizontalAlignment="Left" Margin="275,257,0,0" VerticalAlignment="Top" Click="border_cb_Checked"/>
-        <CheckBox x:Name="italic_cb" Content="Italics" HorizontalAlignment="Left" Margin="275,293,0,0" VerticalAlignment="Top" Click="italic_cb_Checked"/>
-        <Label Content="Write your word here:" HorizontalAlignment="Left" Margin="275,93,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="send_btn" Content="Save!" HorizontalAlignment="Left" Margin="595,377,0,0" VerticalAlignment="Top" Height="24" Width="91" Click="save_btn_Click"/>
+        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA3E24B"/>
+                <GradientStop Color="#FFFFEA00" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="word_tb" HorizontalAlignment="Left" Margin="106,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="457" Height="30" Background="{x:Null}" BorderBrush="Black" Foreground="#FF080808"/>
+        <CheckBox x:Name="uc_cb" Content="Upper case" HorizontalAlignment="Left" Margin="149,183,0,0" VerticalAlignment="Top" Checked="uc_cb_Checked" Height="17" Width="86" Opacity="2" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+            <CheckBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF06FB7A"/>
+                    <GradientStop Color="#FFDBFF07" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.BorderBrush>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox x:Name="lc_cb" Content="Lower case" HorizontalAlignment="Left" Margin="167,236,0,0" VerticalAlignment="Top" Checked="lc_cb_Checked" Height="16" Width="122" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+            <CheckBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF62F5E4"/>
+                    <GradientStop Color="#FFFFBB00" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.BorderBrush>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox x:Name="border_cb" Content="Border" HorizontalAlignment="Left" Margin="149,290,0,0" VerticalAlignment="Top" Checked="border_cb_Checked" Unchecked="border_cb_Unchecked" Height="17" Width="86" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+            <CheckBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF00D6FF" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.BorderBrush>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox x:Name="italic_cb" Content="Italics" HorizontalAlignment="Left" Margin="145,344,0,0" VerticalAlignment="Top" Checked="italic_cb_Checked" Unchecked="italic_cb_Unchecked" Height="17" Width="78" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+            <CheckBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE8FF1A"/>
+                    <GradientStop Color="#FFF709E3" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.BorderBrush>
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <Label Content="Write your word here:" HorizontalAlignment="Left" Margin="106,73,0,0" VerticalAlignment="Top" Height="46" Width="264" FontSize="18"/>
+        <Button x:Name="send_btn" Content="Save!" HorizontalAlignment="Left" Margin="595,352,0,0" VerticalAlignment="Top" Height="49" Width="146" Click="save_btn_Click" FontSize="18" Background="{x:Null}"/>
+        <Rectangle HorizontalAlignment="Center" Height="40" Stroke="White" VerticalAlignment="Top" Width="800" Fill="White"/>
+        <Button x:Name="begin_close_btn" Content="X" HorizontalAlignment="Left" Margin="746,6,0,0" VerticalAlignment="Top" Width="27" Height="28" Background="{x:Null}" BorderBrush="Black" FontSize="18" Click="begin_close_btn_Close"/>
 
     </Grid>
 </Window>

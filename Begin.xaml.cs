@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,14 +41,14 @@ namespace WpfApp_PR8
 
         private void border_cb_Checked(object sender, RoutedEventArgs e)
         {
-            work.Border = false;
-            work.Border = !work.Border;
+
+            work.Border = true;
         }
 
         private void italic_cb_Checked(object sender, RoutedEventArgs e)
         {
-            work.Italic = false;
-            work.Italic = !work.Italic;
+
+            work.Italic = true;
         }
 
         private void save_btn_Click(object sender, RoutedEventArgs e)
@@ -59,6 +60,20 @@ namespace WpfApp_PR8
         {
             this.Visibility = Visibility.Hidden;
             e.Cancel = true;
+        }
+
+        private void italic_cb_Unchecked(object sender, RoutedEventArgs e)
+        {
+            work.Italic = false;
+        }
+        private void border_cb_Unchecked(object sender, RoutedEventArgs e)
+        {
+            work.Border = false;
+        }
+        private void begin_close_btn_Close(object sender, RoutedEventArgs e)
+        {
+            System.ComponentModel.CancelEventArgs de = new System.ComponentModel.CancelEventArgs();
+            OnClosing(sender, de);
         }
     }
 }
